@@ -1,0 +1,121 @@
+In this section we review the data we collected for the City of Chicago and the
+methods we used to cluster Chicago's census tracts into priority areas for solar
+panel distribution. We used the hazard-exposure-vulnerability framework asserted
+by the \ac{ipcc} to categorize the datasets used in this work
+\cite{viner_understanding_2020,field_determinants_2012}.
+
+
+\begin{table}[H]
+  \centering
+  \caption{Summary of curated data for the city of Chicago}
+  % \begin{indented}
+  \begin{tabular}{lllll}
+    \br
+    Dataset & Risk Aspect & Spatial & Factor & Source \\
+     & Aspect & Resolution && \\
+     \mr
+     Temperature & Hazard & Community Area & Aggravating & \cite{sengupta_national_2018}\\
+     Population density & Exposure & Census tract & Aggravating & \cite{city_of_chicago_boundaries_nodate}\\
+     Percent tree canopy & Vulnerability & Community area & Mitigating & \cite{kua_chicago_2020}\\
+     Energy burden & Vulnerability & Census tract & Aggravating & \cite{council_on_environmental_quality_climate_nodate}\\
+     Age & Vulnerability & Census Tract & Aggravating & \cite{city_of_chicago_boundaries_nodate}\\
+     Cooling centers & Vulnerability & Community Area & Mitigating & \cite{city_of_chicago_boundaries_nodate}\\
+     Social network & Vulnerability & Community Area & Mitigating & \cite{city_of_chicago_boundaries_nodate}\\
+     Crime rate & Vulnerability & Community Area & Aggravating & \cite{city_of_chicago_boundaries_nodate}\\
+     Percent qualified roof area & Vulnerability & Census Tract & Mitigating& \cite{google_project_2022}\\
+     \br
+  \end{tabular}
+  % \end{indented}
+\end{table}
+
+\subsection{Hazard}
+
+Hazards are the climate-related events the may lead to adverse outcomes for people,
+such as losses of life, function, property, infrastructure, and resources
+\cite{viner_understanding_2020}. In this work, we focus on the risk of heat stress
+and the potential for heat-related deaths, for which temperature is the primary
+hazard. We gathered hourly temperature data for each community area in Chicago for the
+years 2000 to 2020 using the \ac{nsrdb} \cite{sengupta_national_2018}. In order
+to capture the temperature difference among Chicago's community areas during heatwaves,
+we set a temperature threshold of 32$^\circ$C and filtered out the data below this
+threshold. We defined a heatwave temperature anomaly,
+\begin{eqnarray}
+  H_a = T_{ca} - T_{city},
+\end{eqnarray}
+where $T_{ca}$ is the temperature of the community area and $T_{city}$ is the
+mean temperature of the city (i.e. the mean of all community areas), in celsius.
+We then took the mean of the hourly $H_a$ to use in our clustering algorithm.
+Figure \ref{fig:ha_map} shows the variations in temperature during heatwaves in
+Chicago.
+
+\begin{figure}[H]
+  \label{fig:ha_map}
+    \begin{center}
+      \includegraphics[width=\columnwidth]{temperature_anomaly_map}
+      \vspace*{-2cm}
+      \caption{The temperature variations among community areas in Chicago during
+      heatwaves. Higher values indicate warmer temperatures than the city mean
+      temperature and lower values indicate cooler temperatures.}
+    \end{center}
+\end{figure}
+
+A greater $H_a$ indicates regions that experience higher temperatures during
+heatwaves and lower a $H_a$ indicates regions with lower heatwave temperatures.
+The region near O'Hare International Airport experiences the highest temperatures,
+nearly 2$^\circ$C above the citywide average. The temperature anomalies are further
+adjusted by subtracting the minimum temperature difference such that the
+coolest area of the city has an $\bar{H_a}$ value of zero and other values indicate
+the temperature above this minimum value. This is done to ensure good behavior
+from the clustering process.
+
+\subsection{Exposure}
+
+Exposure is the presence of people or important assets in places that could be
+adversely affected by climate hazards \cite{viner_understanding_2020}.
+
+\subsection{Vulnerability}
+
+Vulnerabilities are the factors that predispose certain groups or areas to adverse
+outcomes. We consider several physical and social vulnerabilities. There are several
+works that map the potential for heat stress, 
+
+\subsubsection{Energy Burden}
+
+Energy burden is the ratio of household energy costs to household income. We
+used data from \ac{cejst} to create a map of energy burden in Chicago
+\cite{council_on_environmental_quality_climate_nodate}. Energy
+burden affects access to electricity, especially during heatwaves when demand
+and cost of electricity are highest. Rooftop solar panels can reduce energy costs
+and therefore improve access to cooling during heatwaves. Figure \ref{fig:eb} shows
+the distribution of energy burden throughout Chicago.
+
+\begin{figure}[H]
+  \label{fig:eb}
+    \begin{center}
+      \includegraphics[width=\columnwidth]{energy_burden}
+      \vspace*{-2cm}
+      \caption{Energy burden throughout Chicago as a percentile. A region in the zeroth
+      percentile has the least energy burden and a region in the 100th percentile has
+      more energy burden than any other region.}
+    \end{center}
+\end{figure}
+
+\subsubsection{Tree Canopy}
+
+Urban tree cover effectively mitigate land surface temperatures in cities
+\cite{loughner_roles_2012, schwaab_role_2021, mcdonald_tree_2021}. Tree canopy
+reduces temperature by preventing ground heat storage through shade and encouraging
+evapotranspiration \cite{mcdonald_tree_2021}. Thus, areas with greater tree cover
+are less vulnerable heatwaves. Figure \ref{fig:tree_census} shows the distribution
+of trees in Chicago from the Morton Arboretum Tree Census \cite{kua_chicago_2020}.
+
+\begin{figure}[H]
+  \label{fig:tree_census}
+    \begin{center}
+      \includegraphics[width=\columnwidth]{tree_canopy}
+      \vspace*{-2cm}
+      \caption{Distribution of trees in Chicago by percentile. A region in the zeroth
+      percentile has the least tree canopy and a region in the 100th percentile has
+      more tree cover than any other region.}
+    \end{center}
+\end{figure}
