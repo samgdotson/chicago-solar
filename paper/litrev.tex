@@ -1,27 +1,104 @@
 The \ac{uhi} effect, where urban areas tend to be warmer than their surroundings,
-is one of the most evident impacts of human activity. Indeed, \ac{uhi} is one of
-the most well studied phenomena, often using remote sensing technology and land
+is among the most well studied phenomena, often using remote sensing technology and land
 surface temperature data \cite{almeida_study_2021, cotlier_extreme_2022}.
 Some studies evaluated \ac{uhi} intensity for particular cities by incorporating
 data about urban features such as albedo, building height, and vegetation
 \cite{sangiorgio_development_2020,abulibdeh_analysis_2021} along with urbanization
 trends \cite{li_how_2021}. Other work in the literature examined \ac{uhi} along
-a socio-economic axis.
+a socio-economic axis. Chakraborty et al. \cite{chakraborty_disproportionately_2019}
+used satellite and census data for multiple cities and found that \ac{uhi}
+disproportionately affects low-income residents in most places, including Chicago,
+and suggest that \ac{uhi} mitigation should benefit demographic groups that experience
+greater \ac{uhi} intensity. Hsu et al. \cite{hsu_disproportionate_2021} also
+found that race and income level were correlated with greater \ac{uhi} intensity.
 
-\begin{itemize}
-  \item What papers have looked at uhi and class?
-  \item What papers have looked at uhi mitigation strategies?
-  \item What are the most frequent mitigation strategies (green+white roofs)
-  \item What papers have looked at the solar panel distribution?
-  \item What are the social aspects of solar panel distribution?
-  \item How have solar panels been distributed previously? (Introduce CEJST & EJSCREEN)
-  \item What gap in the literature is this work specifically filling?
-\end{itemize}
+Strategies to mitigate \ac{uhi} typically interrupt the heat storage process that
+drives \ac{uhi}, where
+low albedo surfaces such as pavement and rooftops absorb and trap heat. Green roofs
+are a popular method to reduce \ac{uhi} by reducing heat storage and increasing
+the energy from latent heat rather than sensible heat \cite{zhang_effectiveness_2017}.
+Similar to green roofs, several studies determined that increasing the urban
+tree canopy is an effective way to reduce \ac{uhi} by reducing heat storage in
+surfaces, but also by providing shade \cite{middel_urban_2015,
+loughner_roles_2012, mcdonald_tree_2021, marando_urban_2022, schwaab_role_2021}.
+``Cool'' roofs reduce \ac{uhi} by increasing the albedo of rooftop surfaces and
+decreasing the amount of radiation that gets absorbed \cite{zhang_effectiveness_2017,
+salamanca_citywide_2016, middel_urban_2015}. Lastly, rooftop solar panels are also
+found to, counter-intuitively, mitigate \ac{uhi} effects at night due to boundary
+layer structure and by reducing energy requirements for cooling \cite{masson_solar_2014,
+sailor_photovoltaics_2021, salamanca_citywide_2016}. However, the primary
+function of solar panels is to improve adaptive capacity by generating energy
+for cooling \cite{masson_solar_2014}.
+
+As with \ac{uhi} intensity, the literature also indicates that \ac{uhi} mitigation
+efforts disproportionately benefit wealthier residents. McDonald et al. reported
+that high-income areas had nearly twice the tree canopy of neighboring low-income
+regions \cite{mcdonald_tree_2021}. Further, efforts to mitigate \ac{uhi} with
+vegetation may lead to gentrification, thereby excluding the intended beneficiaries
+\cite{chakraborty_disproportionately_2019}. Solar panel adoption has also developed
+along socio-economic lines. Vaishnav et al. \cite{vaishnav_was_2017} showed that
+subsidies for rooftop solar panels favored the affluent. Reames et al.
+\cite{reames_distributional_2020} identified that the greatest solar panel
+penetration was found in areas with the greatest income, although it remained
+quite low compared with other cities. The researchers also indicate that lack
+of information contributes to these disparities \cite{vaishnav_was_2017,reames_distributional_2020}.
+Illinois' Solar for All campaign sought to prioritize low-income areas using a
+tool called the \ac{ejscreen} from the \ac{epa} \cite{us_epa_ejscreen_2014}. Another
+tool that identifies climate justice areas is the \ac{cejst}
+\cite{council_on_environmental_quality_climate_nodate}. However, neither of these
+tools incorporate temperature data nor \ac{uhi} effects, thereby limiting their
+effectiveness at targeting areas facing heat wave risk.
+
+In the present work, we use the hazard-exposure-vulnerability framework for
+risk established by \ac{ipcc} in 2018 \cite{viner_understanding_2020}. This
+framework is useful for understanding the different factors that contribute to
+risk. Hazards are the climate events that can produce adverse outcomes. Examples
+include flooding, hurricanes, and heat waves. Our work focuses on the latter.
+Exposure implies the presence of people. People are not at risk from a hazard if
+they are not present. Regions with different population densities have different
+levels of exposure. Further, cities have a higher exposure to heat waves due to
+\ac{uhi}. Lastly, vulnerability describes susceptibility and adaptive capacity to
+particular hazards. This includes socio-economic factors such as race, income,
+and age. Adaptive capacity reduces exposure or vulnerabilities while mitigation
+efforts minimize the hazard itself.
+
+As identified earlier, lower income is associated with greater \ac{uhi} and therefore
+both a greater exposure to heat waves with less adaptive capacity. However, income
+is one of many factors that contribute to heat wave risk. Maragno et al.
+\cite{maragno_mapping_2020} mapped heat stress risk by adapting the
+hazard-exposure-vulnerability framework and included age as a demographic vulnerability
+along with landuse for different types of buildings. There are other
+socioeconomic factors that contribute to heat wave risk, such as crime rate,
+educational attainment, access to cooling centers, and housing characteristics
+\cite{klinenberg_heat_2003,gronlund_racial_2014} that Maragno et al. do not include.
+
+Several works mapped regions with the highest \ac{uhi} \cite{almeida_study_2021},
+identified disparities in \ac{uhi} \cite{chakraborty_disproportionately_2019} and
+its mitigation \cite{reames_distributional_2020, mcdonald_tree_2021}. At least one
+study applied the hazard-exposure-vulnerability framework in a heat wave risk
+assessment \cite{maragno_mapping_2020}. However, there is no existing literature
+that prescribes a methodology for efficient allocation of rooftop solar panels.
+The present work fills that gap by collecting satellite and socio-economic data
+to identify areas of high heat wave risk that accounts for disparities in
+exposure and adaptive capacity.
 
 
-
-
-Various studies have addressed heat wave problem and distribution of solar panels separately till now. An assessment by means of Land Surface Temperature using remote sensing technology \cite{cotlier_extreme_2022}, the mapping of heat stress by crowdsourcing geospatial data and high spatial resolution data and evaluation of socioeconomic characteristics \cite{maragno_mapping_2020}, quantifying synergies between Urban Heat Island effect and heatwaves in urban areas \cite{founda_synergies_2017}  are some of the studies addressing heatwave problem. While these studies mainly discuss about the spatial distribution of heat stress, others have also addressed its implications to the society by assessing socio-economic vulnerability and risk. One of the study\cite{maragno_mapping_2020} has developed sensitivity, adaptive capacity, vulnerability, exposure, and risk indicators and tested the framework on urban area concluding that vulnerability and risk levels differ with changing locational characteristics within the same urban area and hence the high resolution spatial dataset serves a great importance to plan necessary adaptation strategies. This study served as a foreground to choose the high resolution datasets in our study. Our study area is Chicago city which is an highly urbanized area with varying locational characteristics. We reviewed few studies related to Chicago heatwaves. The study by Bernice Ackerman  has addressed the effect of Lake Michigan on temperature of its surrounding area and the effect of green cover. It was helpful in identifying the crucial indicators like green cover and presence of water bodies which help surrounding areas to stay relatively cooler and hence could serve as good adaptive capacity indicators.
-
-Prior research has shown works that study the distributional disparities in residential rooftop solar potential in four major cities in Chicago and a few other cities \cite{reames_distributional_2020}. The study found that the highest rooftop potential in Chicago was in census tracts with higher percentages of \ac{lmi} households. The \ac{lmi} households represented 51\% of solar suitable households in Chicago. However, the lower penetration of solar \ac{lmi} communities substantially decreases the overall attainment of renewable energy and energy equity goals in Chicago.  DeepSolar, a machine learning framework that efficiently constructs a solar deployment dataset for the United States has found that the solar deployment density is strongly correlated and decreases with the Gini index, a measure of income inequality \cite{yu_deepsolar_2018}. This points out how socio-economic inequality causes disparities in solar distribution. Most states across the United States have developed one or more policies to incentivize distributed solar PV investments. Many states have adopted various additional financial incentives to encourage and support the deployment of customer-owned distributed solar energy systems \cite{pitt_assessing_2015}. These policies and incentives are similar to Illinois Shine and Solar for All programs in Illinois which the current study focuses on.
-However, it has also been shown that the distribution of low-carbon technology subsidies and their associated benefits can be highly uneven across socioeconomic groups, revealing a persistent inequality issue. The high income community usually have the resources and knowledge required to avail the benefits of such subsidies and hence tend to be more benefited than their low income counterparts \cite{stewart_all_2021}. This escalates the need for equitable distribution of the solar incentives across different socioeconomic communities. Hence, this study aims to find the ‘high risk’ areas in Chicago and help facilitate equitable distribution of solar panels through the Illinois Shine and Solar for all programs.
+% \begin{itemize}
+%   \item What studies have mapped uhi?
+%   \item What papers have looked at uhi and class?
+%   \item What papers have looked at uhi mitigation strategies?
+%   \item What are the most frequent mitigation strategies (green+white roofs)
+%   \item What papers have looked at the solar panel distribution?
+%   \item What are the social aspects of solar panel distribution?
+%   \item How have solar panels been distributed previously? (Introduce CEJST \& EJSCREEN)
+%   \item What gap in the literature is this work specifically filling?
+%   \item How are we defining risk? solar panels may worsen the hazard since they have a low albedo.
+% \end{itemize}
+%
+%
+%
+%
+% Various studies have addressed heat wave problem and distribution of solar panels separately till now. An assessment by means of Land Surface Temperature using remote sensing technology \cite{cotlier_extreme_2022}, the mapping of heat stress by crowdsourcing geospatial data and high spatial resolution data and evaluation of socioeconomic characteristics \cite{maragno_mapping_2020}, quantifying synergies between Urban Heat Island effect and heatwaves in urban areas \cite{founda_synergies_2017}  are some of the studies addressing heatwave problem. While these studies mainly discuss about the spatial distribution of heat stress, others have also addressed its implications to the society by assessing socio-economic vulnerability and risk. One of the study\cite{maragno_mapping_2020} has developed sensitivity, adaptive capacity, vulnerability, exposure, and risk indicators and tested the framework on urban area concluding that vulnerability and risk levels differ with changing locational characteristics within the same urban area and hence the high resolution spatial dataset serves a great importance to plan necessary adaptation strategies. This study served as a foreground to choose the high resolution datasets in our study. Our study area is Chicago city which is an highly urbanized area with varying locational characteristics. We reviewed few studies related to Chicago heatwaves. The study by Bernice Ackerman  has addressed the effect of Lake Michigan on temperature of its surrounding area and the effect of green cover. It was helpful in identifying the crucial indicators like green cover and presence of water bodies which help surrounding areas to stay relatively cooler and hence could serve as good adaptive capacity indicators.
+%
+% Prior research has shown works that study the distributional disparities in residential rooftop solar potential in four major cities in Chicago and a few other cities \cite{reames_distributional_2020}. The study found that the highest rooftop potential in Chicago was in census tracts with higher percentages of \ac{lmi} households. The \ac{lmi} households represented 51\% of solar suitable households in Chicago. However, the lower penetration of solar \ac{lmi} communities substantially decreases the overall attainment of renewable energy and energy equity goals in Chicago.  DeepSolar, a machine learning framework that efficiently constructs a solar deployment dataset for the United States has found that the solar deployment density is strongly correlated and decreases with the Gini index, a measure of income inequality \cite{yu_deepsolar_2018}. This points out how socio-economic inequality causes disparities in solar distribution. Most states across the United States have developed one or more policies to incentivize distributed solar PV investments. Many states have adopted various additional financial incentives to encourage and support the deployment of customer-owned distributed solar energy systems \cite{pitt_assessing_2015}. These policies and incentives are similar to Illinois Shine and Solar for All programs in Illinois which the current study focuses on.
+% However, it has also been shown that the distribution of low-carbon technology subsidies and their associated benefits can be highly uneven across socioeconomic groups, revealing a persistent inequality issue. The high income community usually have the resources and knowledge required to avail the benefits of such subsidies and hence tend to be more benefited than their low income counterparts \cite{stewart_all_2021}. This escalates the need for equitable distribution of the solar incentives across different socioeconomic communities. Hence, this study aims to find the ‘high risk’ areas in Chicago and help facilitate equitable distribution of solar panels through the Illinois Shine and Solar for all programs.
