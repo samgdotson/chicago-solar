@@ -5,28 +5,35 @@ by the \ac{ipcc} to categorize the datasets used in this work
 \cite{viner_understanding_2020,field_determinants_2012}.
 
 
-\begin{table}[H]
-  \centering
+\begin{table*}[h]
+% \begin{minipage}{\textwidth}
+  % \centering
   \caption{Summary of curated data for the city of Chicago}
-  % \begin{indented}
-  \begin{tabular}{lllll}
-    \br
-    Dataset & Risk Aspect & Spatial & Factor & Source \\
-     & Aspect & Resolution && \\
-     \mr
-     Temperature & Hazard & Community Area & Aggravating & \cite{sengupta_national_2018}\\
-     Population density & Exposure & Census tract & Aggravating & \cite{city_of_chicago_boundaries_nodate}\\
-     Percent tree canopy & Vulnerability & Community area & Mitigating & \cite{kua_chicago_2020}\\
-     Energy burden & Vulnerability & Census tract & Aggravating & \cite{council_on_environmental_quality_climate_nodate}\\
-     Age & Vulnerability & Census Tract & Aggravating & \cite{city_of_chicago_boundaries_nodate}\\
-     Cooling centers & Vulnerability & Community Area & Mitigating & \cite{city_of_chicago_boundaries_nodate}\\
-     Social network & Vulnerability & Community Area & Mitigating & \cite{city_of_chicago_boundaries_nodate}\\
-     Crime rate & Vulnerability & Community Area & Aggravating & \cite{city_of_chicago_boundaries_nodate}\\
-     Percent qualified roof area & Vulnerability & Census Tract & Mitigating& \cite{google_project_2022}\\
-     \br
-  \end{tabular}
+  \begin{center}
+    % \begin{indented}
+    \begin{tabular}{lllll}
+      \br
+      Dataset & Risk Aspect & Spatial & Factor & Source \\
+      & Aspect & Resolution && \\
+      \mr
+      Temperature & Hazard & Community Area & Aggravating & \cite{sengupta_national_2018}\\
+      Population density & Exposure & Census tract & Aggravating & \cite{city_of_chicago_boundaries_nodate}\\
+      Percent tree canopy & Vulnerability & Community area & Mitigating & \cite{kua_chicago_2020}\\
+      Energy burden & Vulnerability & Census tract & Aggravating & \cite{council_on_environmental_quality_climate_nodate}\\
+      Age & Vulnerability & Census Tract & Aggravating & \cite{city_of_chicago_boundaries_nodate}\\
+      Cooling centers & Vulnerability & Community Area & Mitigating & \cite{city_of_chicago_boundaries_nodate}\\
+      Social network & Vulnerability & Community Area & Mitigating & \cite{city_of_chicago_boundaries_nodate}\\
+      Crime rate & Vulnerability & Community Area & Aggravating & \cite{city_of_chicago_boundaries_nodate}\\
+      Percent qualified roof area & Vulnerability & Census Tract & Mitigating& \cite{google_project_2022}\\
+      \br
+
+    \end{tabular}
+  \end{center}
+% \end{minipage}
   % \end{indented}
-\end{table}
+
+\end{table*}
+
 
 \subsection{Hazard}
 
@@ -59,8 +66,9 @@ Chicago.
     \end{center}
 \end{figure}
 
-A greater $H_a$ indicates regions that experience higher temperatures during
-heatwaves and lower a $H_a$ indicates regions with lower heatwave temperatures.
+A positive $H_a$ indicates regions that experience higher temperatures during
+heatwaves and a negative $H_a$ indicates regions with lower heatwave temperatures,
+with respect to the citywide average temperature.
 The region near O'Hare International Airport experiences the highest temperatures,
 nearly 2$^\circ$C above the citywide average. The temperature anomalies are further
 adjusted by subtracting the minimum temperature difference such that the
@@ -76,13 +84,20 @@ adversely affected by climate hazards \cite{viner_understanding_2020}.
 \subsection{Vulnerability}
 
 Vulnerabilities are the factors that predispose certain groups or areas to adverse
-outcomes. We consider several physical and social vulnerabilities. There are several
-works that map the potential for heat stress, 
+outcomes. We consider several physical and social vulnerabilities. Studies that
+mapped heat stress and heatwave risk tend to focus on weather effects (hazards)
+alone \cite{dahl_killer_2019, kang_heatwave-related_2020,mazdiyasni_heat_2019,
+cotlier_extreme_2022}. One study incorporated a hazard-exposure-vulnerability
+framework by treating land use and building purpose as proxies for exposure and
+vulnerability, along with population age \cite{maragno_mapping_2020}. Conversely,
+studies that map the disparities in solar panel distribution do so along a social
+axis, without climate differences.
+
 
 \subsubsection{Energy Burden}
 
-Energy burden is the ratio of household energy costs to household income. We
-used data from \ac{cejst} to create a map of energy burden in Chicago
+Energy burden is the ratio of household energy costs to household income. We created
+a map of energy burden in Chicago using data from \ac{cejst}
 \cite{council_on_environmental_quality_climate_nodate}. Energy
 burden affects access to electricity, especially during heatwaves when demand
 and cost of electricity are highest. Rooftop solar panels can reduce energy costs
