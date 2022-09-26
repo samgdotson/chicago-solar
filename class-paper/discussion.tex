@@ -1,0 +1,85 @@
+The prioritization mapping protocol outlined by this research is better suited for
+identifying regions for targeted incentive distribution to address specific issues
+in urban settings than existing general environmental justice community
+identification tools currently used for funding dissemination.
+
+\subsection{Comparison to other Energy Justice Mapping Tools}
+Other screening tools have been developed to analyze spatial characteristics of
+environmental justice. The \ac{ejscreen} tool from the \ac{epa} \cite{us_epa_ejscreen_2014}
+and the US Council on Environmental Quality’s \ac{cejst} tool can both be used to
+identify disadvantaged or vulnerable populations spatially
+\cite{council_on_environmental_quality_climate_nodate}. However, the map generated
+by this research identifies a more precise region of the city of Chicago to be
+prioritized for rooftop solar initiatives, therefore informing more efficient
+allocation of resources to the most vulnerable communities for this particular issue.
+Figure \ref{fig:ejscreen_map} and Figure \ref{fig:cejst_map} show the at-risk areas
+in Chicago identified by \ac{ejscreen} and \ac{cejst}, respectively.
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[trim=0 200 0 120, clip, width=\columnwidth]{ejscreen_map}
+      % \vspace*{-3cm}
+      \caption{Environmental justice communities identified by \ac{ejscreen}. ``Yes''
+      indicates that the community has environmental justice concerns.}
+      \label{fig:ejscreen_map}
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[trim=0 200 0 120, clip, width=\columnwidth]{cejst_map}
+      % \vspace*{-3cm}
+      \caption{Normalized energy burden from the \ac{cejst} tool.}
+      \label{fig:cejst_map}
+    \end{center}
+\end{figure}
+
+Importantly, neither of these tools incorporate heatwave risk and use a limited
+set of social features. The prioritization created in this research considers
+traditional environmental justice factors, including age, income, and race, but
+also incorporates urban heat island impacts, qualified roof area, access to cooling
+centers, tree cover, and energy burden to more specifically interrogate spatial
+distribution of heat impacts that could be mitigated through access to cleaner,
+cheaper energy for cooling. This is a more holistic approach to understanding
+environmental justice for the specific issue of access to affordable energy to
+cool urban homes in a heat wave. While mapping the distribution of spatial
+attributes of environmental justice can illuminate inequities at a multitude of
+scales, this more precise issue-specific mapping could be more effective for
+policy and incentive development.
+
+\subsection{Targeted Incentive Distribution}
+
+Illinois \ac{sfa} is a state-funded program that “promotes equitable access to
+the solar economy through program incentives that help make solar more affordable
+for low-income communities” \cite{illinois_solar_for_all_environmental_2022}. The
+program allows low-income communities to benefit from community solar arrays and
+distributed generation installations, as well as providing low-cost solar
+installations to non-profit organizations and public facilities. Initial funding
+for SFA was provided by Illinois' 2017 Future Energy Jobs Act, but when funds were
+exhausted, talk of a “solar cliff” highlighted the uncertainty of the future of
+solar incentives in the state (Lydersen, 2020). The popularity of this program
+and limited funding for solar projects emphasizes the need for targeted distribution
+of funds to the communities that need it most.
+
+SFA has an explicit commitment to increasing access to solar energy among
+environmental justice communities. SFA uses \ac{epa}’s \ac{ejscreen} and a
+self-designation  process to identify environmental justice communities across
+the state of Illinois. However, this method of identifying communities to target
+for SFA incentives is based on a more general understanding of environmental
+justice, and does not necessarily consider the potential impact of solar energy
+to reduce the energy burden on low-income households through solar installation.
+Targeted prioritization as outlined in this research could result in allocation
+of limited solar incentive funds to the communities that would experience the
+greatest benefit from solar installations by reducing risks associated with heatwaves.
+
+\subsection{Limitations}
+
+This study curated census and satellite data to develop a heat wave risk prioritization
+scheme. There are some limitations to this process. First, we implicitly weight
+vulnerability factors higher than hazard or exposure since we have more of those
+data points. Second, the heat wave temperature anomaly does not account for duration
+in the definition of heat wave. We also only consider temperature as a heat wave
+hazard. Other climatic factors may influence the effect of heat waves and heat
+stress on the human body, such as humidity. These issues may be addressed by
+adding more data points and improving the resolution of the data. Finally, stronger
+models relating proximal mechanisms, such as crime rate and isolation, to negative
+heat wave outcomes would be useful in weighting each variable.
